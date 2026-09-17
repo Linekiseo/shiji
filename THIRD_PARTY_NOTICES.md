@@ -13,4 +13,4 @@ Dependency versions are pinned in `app/package-lock.json`. Third-party packages 
 | AndroidX | Apache-2.0 | https://android.googlesource.com/platform/frameworks/support/ |
 | resvg | MPL-2.0 | https://github.com/linebender/resvg |
 
-The app does not ship the design prototype's device frames, keyboard screenshots, personal uploads, or recordings. The quiet-opal background is an AI-assisted original asset created for this project. Build-only dependencies are not bundled into the APK.
+The app does not ship the design prototype's device frames, keyboard screenshots, personal uploads, or recordings. The quiet-opal background and Shiji folded-ribbon icon are AI-assisted original assets created for this project. The icon was generated with the built-in imagegen tool; source images and prompts are in `branding/`. Build-only dependencies are not bundled into the APK.

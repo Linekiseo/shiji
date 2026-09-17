@@ -47,7 +47,7 @@ app/src/storage.ts       原生文件持久化／浏览器 IndexedDB
 app/src/native.ts        相机、相册与系统分享
 app/android/             原生 Android 工程
 app/tests/               备份边界、时间与数据契约测试
-branding/                矢量图标与品牌源文件
+branding/                图标原图、透明前景与生成提示词
 docs/                    产品与发布说明
 ```
 
@@ -55,4 +55,4 @@ Android 采用 `AtomicFile` 写入任务快照，图片和录音单独存放，�
 
 ## 图标与授权
 
-图标以两个时间轨迹点接入完成勾，蓝青渐变与半透明曲面呼应应用的玻璃材质。Android 提供自适应图标及单色主题图标。图标 SVG、应用代码和项目原创背景随仓库按 MIT 开源。第三方组件分别遵循其原有许可，见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。
+图标由 imagegen 生成，以折叠纸页构成 S 形轨迹，蓝色玻璃质感呼应应用界面。Android 提供自适应图标及单色主题图标，并保留圆形裁切的安全区域。原始图像与提示词见 [branding](branding/README.md)。图标、应用代码和项目原创背景随仓库按 MIT 开源。第三方组件分别遵循其原有许可，见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。

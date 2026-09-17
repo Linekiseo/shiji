@@ -16,7 +16,7 @@ function Root(){
   const [ready,setReady]=useState(false),[error,setError]=useState('');
   useEffect(()=>{initializeStorage().then(()=>setReady(true)).catch(()=>setError('无法读取本地记录，请重新打开。原始数据不会被覆盖。'));void configureAndroidBack();},[]);
   useEffect(()=>{const fail=(event:Event)=>setError((event as CustomEvent<string>).detail);window.addEventListener('shiji-storage-error',fail);return()=>window.removeEventListener('shiji-storage-error',fail);},[]);
-  if(!ready)return <div className="boot"><img src="/icon.svg" alt=""/><h1>拾迹</h1><p>{error||'记录工作，留住进展'}</p>{error&&<button onClick={()=>location.reload()}>重新打开</button>}</div>;
+  if(!ready)return <div className="boot"><img src="/icon.png" alt=""/><h1>拾迹</h1><p>{error||'记录工作，留住进展'}</p>{error&&<button onClick={()=>location.reload()}>重新打开</button>}</div>;
   return <ErrorBoundary><WorkApp/>{error&&<div className="storage-error" role="alert">{error}<button onClick={()=>location.reload()}>重新打开</button></div>}</ErrorBoundary>;
 }
 createRoot(document.getElementById('root')!).render(<Root/>);
