@@ -1,0 +1,30 @@
+* { box-sizing:border-box; }
+:root { color-scheme:light; --device-safe-area-top:12px; --device-safe-area-bottom:0px; --mobile-safe-area-height:0px; }
+html,body,#root { width:100%;height:100%;margin:0; }
+body { overflow:hidden;background:#eef6fc;font-family:system-ui,sans-serif; }
+#root { position:relative;height:var(--viewport-height,100dvh); }
+button,input,textarea { font:inherit; }
+button { cursor:pointer;-webkit-tap-highlight-color:transparent; }
+input,textarea { user-select:text; }
+img { -webkit-user-drag:none; }
+h1,h2,p { margin:0; }
+.mobile-page { position:absolute;inset:0;min-height:0; }
+.mobile-scroll { position:absolute;inset:0;overflow-x:hidden;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:none;touch-action:pan-y;-webkit-overflow-scrolling:touch; }
+.mobile-scroll-content { display:grid;grid-template-columns:minmax(0,1fr);min-width:0; }
+.mobile-scroll::-webkit-scrollbar,.mobile-carousel::-webkit-scrollbar { display:none; }
+.mobile-carousel { position:relative;display:block;width:100%;min-width:0;max-width:100%;overflow-x:auto;overflow-y:hidden;overscroll-behavior-x:contain;scrollbar-width:none;touch-action:pan-x pan-y; }
+.mobile-carousel-content { display:flex;width:max-content;min-width:100%; }
+.sheet-overlay { position:fixed;inset:0;z-index:80;background:#21384b44; }
+.bottom-sheet { position:fixed;z-index:81;bottom:0;left:0;right:0;display:flex;flex-direction:column;min-height:200px;overflow:hidden;border-radius:28px 28px 0 0;background:#f4f9fc; }
+.sheet-handle-zone { height:30px;flex:0 0 30px;display:grid;place-items:center;touch-action:none; }
+.sheet-handle { width:42px;height:4px;border-radius:10px;background:#a5bac9; }
+.sheet-header { display:grid;gap:4px;padding:0 20px 14px; }
+.sheet-title { margin:0;font-size:20px; }
+.sheet-description { margin:0;font-size:13px; }
+.sheet-content { min-height:0;overflow:auto;padding:0 20px 24px; }
+.boot { position:absolute;inset:0;display:grid;place-content:center;gap:18px;text-align:center;color:#345c79;padding:32px;background:#eef6fc; }
+.boot img { width:88px;height:88px;margin:auto; }
+.boot h1 { font-size:28px;letter-spacing:4px; }
+.boot p { font-size:14px;line-height:1.7; }
+.boot button { border:0;border-radius:16px;padding:12px 24px;color:white;background:#2469ef; }
+.storage-error { position:fixed;z-index:150;top:8px;left:12px;right:12px;border:1px solid #ef8d88;border-radius:14px;background:#fff2ee;color:#8e332d;padding:12px;font-size:13px; }

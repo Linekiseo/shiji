@@ -1,0 +1,35 @@
+name: Android checks
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: app
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: app/package-lock.json
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+      - uses: android-actions/setup-android@v3
+      - uses: gradle/actions/setup-gradle@v4
+      - run: npm ci
+      - run: npm test
+      - run: npm audit --omit=dev
+      - run: npm run android:sync
+      - run: cd android && ./gradlew assembleDebug lintDebug
+      - uses: actions/upload-artifact@v4
+        with:
+          name: shiji-debug
+          path: app/android/app/build/outputs/apk/debug/*.apk
